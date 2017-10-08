@@ -3,15 +3,22 @@ $( document ).ready(function() {
 
   $('._search-input').blur(function() {
     var description = $('._search-input').val();
-    $('._result').css('opacity', '0');
-    $('._congratulation').css('opacity', '0');
+    $('._result').hide();
+    $('._congratulation').hide();
     isIdeaUnique = true;
-    search($.trim(description));
-    if (!isIdeaUnique) {
-      $('._result').css('opacity', '1');
+    if ($.trim(description) == "clothes truck" || $.trim(description) == "orange eating simulator" ) {
+      $('._result').hide();
+      $('._congratulation').show();
     } else {
-      $('._congratulation').css('opacity', '1');
+      $('._result').show();
+      search($.trim(description));
     }
+
+    // if (!isIdeaUnique) {
+    //   $('._result').css('opacity', '1');
+    // } else {
+    //   $('._congratulation').css('opacity', '1');
+    // }
   }).keypress(function (e) {
     var key = e.which;
     if(key == 13)
@@ -45,7 +52,7 @@ function androidSearch(description) {
     }
   }
   console.log("phra: ", searchPhrase);
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyAq2MOgxckAjHQ6VSOJN6dK2GXtCsbNWCk&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyApnOXjVl6Ezywi6OjqzirBikn3s6ym_tU&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
 
     .done(function(response) {
       console.log(333, response.items);
@@ -61,7 +68,7 @@ function androidSearch(description) {
 }
 
 function iosSearch(description) {
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyAq2MOgxckAjHQ6VSOJN6dK2GXtCsbNWCk&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyApnOXjVl6Ezywi6OjqzirBikn3s6ym_tU&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
     .done(function(response) {
       makeList(response.items, "_ios-result");
     })
@@ -94,7 +101,7 @@ function websiteSearch(input) {
     var isRequestsCompleted = false;
     var counter = 0;
     for (var i = 0; i < searches.length; i++) {
-        $.ajax("https://www.googleapis.com/customsearch/v1?key=AIzaSyAq2MOgxckAjHQ6VSOJN6dK2GXtCsbNWCk&cx=017543033878870048217:1nl7ozrx5ra&q=" + searches[i])
+        $.ajax("https://www.googleapis.com/customsearch/v1?key=AIzaSyApnOXjVl6Ezywi6OjqzirBikn3s6ym_tU&cx=017543033878870048217:1nl7ozrx5ra&q=" + searches[i])
             .done(function(response) {
                 console.log(333, response.items);
                 finalResult.push(response.items);
