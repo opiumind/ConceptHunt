@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <title>ConseptExplorer</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
     <script type="text/javascript" src="./main.js"></script>
+
+
 </head>
 <body>
+    <div id="content"></div>
+    <div id="content2"></div>
     <header>
         <span>Concept Explorer</span>
     </header>
@@ -21,4 +24,18 @@
     </div>
     <footer></footer>
 </body>
+<script>
+  function hndlr(response) {
+    for (var i = 0; i < response.items.length; i++) {
+      var item = response.items[i];
+      // in production code, item.htmlTitle should have the HTML entities escaped.
+      document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
+    }
+  }
+</script>
+<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyASvGxuB-zDfbnLFWDgIQQiNcHbo07w6Qs&cx=017543033878870048217:rmyrrsiadtw&q=free+parking&callback=hndlr">
+</script>
+<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyASvGxuB-zDfbnLFWDgIQQiNcHbo07w6Qs&cx=017543033878870048217:odnl6t9lnmy&q=free+parking&callback=hndlr2">
+</script>
+
 </html>
