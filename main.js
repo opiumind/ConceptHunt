@@ -12,7 +12,7 @@ $( document ).ready(function() {
     }
   });
 
-  $(._search-btn).click(function() {
+  $('.search-btn').click(function() {
     $('._search-input').blur();
   })
 });

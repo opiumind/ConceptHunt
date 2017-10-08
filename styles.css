@@ -226,3 +226,9 @@ footer{
     padding: 20px;
     text-decoration: none;
 }
+
+.unique {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+}
