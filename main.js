@@ -28,6 +28,7 @@ $( document ).ready(function() {
 function search(description) {
   androidSearch(description);
   iosSearch(description);
+  websiteSearch(description);
 }
 
 function androidSearch(description) {
@@ -41,7 +42,7 @@ function androidSearch(description) {
     }
   }
   console.log("phra: ", searchPhrase);
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyAq2MOgxckAjHQ6VSOJN6dK2GXtCsbNWCk&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
 
     .done(function(response) {
       console.log(333, response.items);
@@ -57,7 +58,7 @@ function androidSearch(description) {
 }
 
 function iosSearch(description) {
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyAq2MOgxckAjHQ6VSOJN6dK2GXtCsbNWCk&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
     .done(function(response) {
       makeList(response.items, "_ios-result");
     })
@@ -83,4 +84,42 @@ function makeList(dataArray, elementClass) {
       '</li>';
     $('.' + elementClass).html(resultString);
   }
+}
+function websiteSearch(input) {
+    var searches = [input + "+web+app+-site%3Aplay.google.com", input + "+website+-site%3Aplay.google.com", input + "+service+ -site%3Aplay.google.com"];
+    var finalResult = [];
+    var isRequestsCompleted = false;
+    var counter = 0;
+    for (var i = 0; i < searches.length; i++) {
+        $.ajax("https://www.googleapis.com/customsearch/v1?key=AIzaSyAq2MOgxckAjHQ6VSOJN6dK2GXtCsbNWCk&cx=017543033878870048217:1nl7ozrx5ra&q=" + searches[i])
+            .done(function(response) {
+                console.log(333, response.items);
+                finalResult.push(response.items);
+                console.log(444, finalResult);
+                if (counter == 2) {
+                    analyzeWebResults(finalResult);
+                    console.log(555,5);
+                }
+                counter++;
+            })
+            .fail(function() {
+                console.log( "error" );
+            })
+            .always(function() {
+                console.log( "website search is complete" );
+            });
+    }
+}
+
+function analyzeWebResults (results) {
+    console.log("one",results);
+    var myDataArray = [];
+    for (var i = 0; i < 3; i++) {
+        for (var k = 0; k < 4; k++) {
+            var item = results[i][k];
+            myDataArray.push(item);
+        }
+    }
+    console.log("easypeasy", myDataArray);
+    makeList(myDataArray, '_web-result');
 }
