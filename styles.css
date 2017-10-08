@@ -166,12 +166,22 @@ ul{
     margin: 0;
     padding: 0;
 }
+
+
 .column-text{
     font-size: 20px;
-    text-align: center;
+    text-align: left;
     line-height: 24px;
 }
 
 .column-text-item {
     list-style: none;
+}
+.column-text-item-link {
+    color: orange;
+}
+.column-text-item-description {
+    color: gray;
+    text-align: left;
+    font-size: 17px;
 }
