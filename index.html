@@ -2,22 +2,57 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <title>ConseptExplorer</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 </head>
 <body>
-    <header>
-        <span>Concept Explorer</span>
-    </header>
-    <div class="search">
-        <input placeholder="Describe your idea" type="search" />
-
+<header>
+    <div class="top">
+        <h1 class="title">Concept Hunt</h1>
+        <a href="#" class="sign-up-button">My Idea</a>
     </div>
-    <div class="result">
-
+</header>
+<div class="search">
+    <div class="search-input-container">
+        <input placeholder="Describe your idea" type="search" class="search-input"/>
+        <button><i class="fa fa-search"></i></button>
     </div>
-    <footer></footer>
+</div>
+<div class="filter">
+    <p>Level of accuracy:</p>
+    <div class="check-box">
+        <input type="checkbox" name="accuracy" value="Low" class="check"> Low
+        <input type="checkbox" name="accuracy" value="Medium" class="check"> Medium
+        <input type="checkbox" name="accuracy" value="High" class="check"> High
+    </div>
+</div>
+<div class="result">
+    <div class="result-headers-container">
+
+        <div class="result-header">
+            <span class="header-text">Google Play Application</span>
+        </div>
+        <div class="result-header"><span class="header-text">Apple Store Application</span></div>
+        <div class="result-header"><span class="header-text">Web Application</span></div>
+    </div>
+    <div class="result-column-container">
+        <div class="result-column">
+            <ul class="_android-result column-text"></ul>
+        </div>
+        <div class="result-column">
+            <ul class="_ios-result column-text"></ul>
+        </div>
+        <div class="result-column">
+            <ul class="_web-result column-text"></ul>
+        </div>
+    </div>
+
+</div>
+
+</div>
+<footer></footer>
 </body>
 </html>
