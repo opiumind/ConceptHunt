@@ -1,7 +1,11 @@
+html {
+    height: 100%;
+}
 body{
     margin: 0;
     background-color: white;
     font-family: Arial, sans-serif;
+    height: 100%;
 }
 
 .top{
@@ -117,6 +121,7 @@ p{
     margin: 0 auto;
     /*opacity: 0;*/
     display: none;
+    min-height: 100%;
 }
 .result-headers-container{
     display: block;
@@ -193,9 +198,8 @@ ul{
 footer{
     margin-top: 40px;
     background-color: #6bbaa7;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    height: 158px;
 }
 
 
