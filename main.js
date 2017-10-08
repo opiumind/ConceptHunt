@@ -1,8 +1,14 @@
 $( document ).ready(function() {
+  var isIdeaUnique = true;
+
   $('._search-input').blur(function() {
     var description = $('._search-input').val();
-    console.log(22,description);
+    $('._result').css('opacity', '0');
+    isIdeaUnique = true;
     search($.trim(description));
+    if (!isIdeaUnique) {
+      $('._result').css('opacity', '1');
+    }
   }).keypress(function (e) {
     var key = e.which;
     if(key == 13)
@@ -12,9 +18,11 @@ $( document ).ready(function() {
     }
   });
 
-  $('.search-btn').click(function() {
+  $('._search-btn').click(function() {
     $('._search-input').blur();
-  })
+  });
+
+
 });
 
 function search(description) {
@@ -62,11 +70,13 @@ function iosSearch(description) {
 }
 
 function makeList(dataArray, elementClass) {
-  console.log(dataArray);
+  if (!dataArray || dataArray.length == 0) {
+    return false;
+  }
+  isIdeaUnique = false;
   var resultString = '';
   for (var i = 0; i < dataArray.length; i++) {
     var item = dataArray[i];
-    // in production code, item.htmlTitle should have the HTML entities escaped.
     resultString += '<li class="column-text-item">' +
       '<a class="column-text-item-link" href="' + item.link + '">' + item.title + '</a>' +
       '<p class="column-text-item-description">'+ item.snippet + '</p>' +

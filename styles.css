@@ -115,6 +115,7 @@ p{
     border: 1px #000000 solid;
     width: 70%;
     margin: 0 auto;
+    opacity: 0;
 }
 .result-headers-container{
     display: block;
