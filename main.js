@@ -52,7 +52,7 @@ function androidSearch(description) {
     }
   }
   console.log("phra: ", searchPhrase);
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyD136rH1k0I3-iIZ_zzXC59IlYpRHppnng&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpapdaCx7XMtkOFAiZW_1VLD9vtu7Bo10&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
 
     .done(function(response) {
       console.log(333, response.items);
@@ -68,7 +68,7 @@ function androidSearch(description) {
 }
 
 function iosSearch(description) {
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyD136rH1k0I3-iIZ_zzXC59IlYpRHppnng&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpapdaCx7XMtkOFAiZW_1VLD9vtu7Bo10&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
     .done(function(response) {
       makeList(response.items, "_ios-result");
     })
@@ -101,7 +101,7 @@ function websiteSearch(input) {
     var isRequestsCompleted = false;
     var counter = 0;
     for (var i = 0; i < searches.length; i++) {
-        $.ajax("https://www.googleapis.com/customsearch/v1?key=AIzaSyD136rH1k0I3-iIZ_zzXC59IlYpRHppnng&cx=017543033878870048217:1nl7ozrx5ra&q=" + searches[i])
+        $.ajax("https://www.googleapis.com/customsearch/v1?key=AIzaSyCpapdaCx7XMtkOFAiZW_1VLD9vtu7Bo10&cx=017543033878870048217:1nl7ozrx5ra&q=" + searches[i])
             .done(function(response) {
                 console.log(333, response.items);
                 finalResult.push(response.items);
