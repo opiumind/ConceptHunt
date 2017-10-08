@@ -231,20 +231,26 @@ footer{
 .unique {
     text-align: center;
     font-family: Arial, sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     color: orange;
     padding-bottom: 0;
+    opacity: 0;
 
+}
+
+.unique span {
+    border: 5px solid #6bbaa7;
+    padding: 40px;
 }
 
 .save {
     text-decoration: none;
-    background-color: white;
-    color: #6bbaa7;
+    color: #ffffff;
     text-align: center;
-
     width: 90px;
-    padding: 5px 10px 5px 10px ;
-    font-size: 20px;
+    background: orange;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 24px;
 
 }
