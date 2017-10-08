@@ -16,7 +16,7 @@
 
         <div class="logo-container">
             <img src="logo.png">
-            <h1 class="title">Concept Hunt</h1>
+            <h1 class="title">ConceptHunt</h1>
         </div>
 
         <div class="header-buttons">
@@ -29,7 +29,7 @@
 <div class="search">
     <div class="search-input-container">
         <input placeholder="Describe your idea" type="search" class="search-input"/>
-        <button><i class="fa fa-search"></i></button>
+        <button><i class="fa-search"></i></button>
     </div>
 </div>
 <div class="filter">
@@ -50,13 +50,13 @@
         <div class="result-header"><span class="header-text">Web Application</span></div>
     </div>
     <div class="result-column-container">
-        <div class="result-column">
+        <div class="result-column" id="_android">
             <ul class="_android-result column-text"></ul>
         </div>
-        <div class="result-column">
+        <div class="result-column" id="_ios">
             <ul class="_ios-result column-text"></ul>
         </div>
-        <div class="result-column">
+        <div class="result-column" id="_web">
             <ul class="_web-result column-text"></ul>
         </div>
     </div>
@@ -64,7 +64,18 @@
 </div>
 
 </div>
-<footer></footer>
+<footer>
+    <p class="footer-links">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-snapchat"></a>
+        <a href="#" class="fa fa-skype"></a>
+    </p>
+    <p class="footer-company-name">&#9400; 2017 ConceptHunt, inc.</p>
+
+
+</footer>
 </body>
 <script>
   function hndlr(response) {
