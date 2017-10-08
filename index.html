@@ -7,8 +7,11 @@
     <title>ConseptExplorer</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="./main.js"></script>
+
+
 </head>
 <body>
+<<<<<<< HEAD
 <header>
     <div class="top">
         <h1 class="title">Concept Hunt</h1>
@@ -27,6 +30,16 @@
         <input type="checkbox" name="accuracy" value="Low" class="check"> Low
         <input type="checkbox" name="accuracy" value="Medium" class="check"> Medium
         <input type="checkbox" name="accuracy" value="High" class="check"> High
+=======
+    <div id="content"></div>
+    <div id="content2"></div>
+    <header>
+        <span>Concept Explorer</span>
+    </header>
+    <div class="search">
+        <input placeholder="Describe your idea" type="search" />
+
+>>>>>>> d8ca3096d94138f1675f0d7791f88320cac024fb
     </div>
 </div>
 <div class="result">
@@ -55,4 +68,18 @@
 </div>
 <footer></footer>
 </body>
+<script>
+  function hndlr(response) {
+    for (var i = 0; i < response.items.length; i++) {
+      var item = response.items[i];
+      // in production code, item.htmlTitle should have the HTML entities escaped.
+      document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
+    }
+  }
+</script>
+<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyASvGxuB-zDfbnLFWDgIQQiNcHbo07w6Qs&cx=017543033878870048217:rmyrrsiadtw&q=free+parking&callback=hndlr">
+</script>
+<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyASvGxuB-zDfbnLFWDgIQQiNcHbo07w6Qs&cx=017543033878870048217:odnl6t9lnmy&q=free+parking&callback=hndlr2">
+</script>
+
 </html>
