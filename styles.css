@@ -9,7 +9,7 @@ body{
     width: 100%;
     display: inline-block;
     background-color: #6bbaa7;
-
+    margin-bottom: 55px;
 }
 .logo-container {
     display: inline-block;
@@ -73,25 +73,27 @@ img{
 .search-input{
     font-size: 17px;
     font-weight: bold;
-    margin-top: 53px;
+    /*margin-top: 53px;*/
     width: 96%;
     border-radius: 3px 0 0 3px;
     border: orange  2px solid;
     padding: 5px;
-
+    vertical-align: top;
 }
 
 .fa-search{
     color: brown;
 }
 button{
-    margin-bottom: 22px;
+    /*margin-bottom: 22px;*/
     width: 4%;
+    box-sizing: border-box;
     background-color: orange;
     border: orange 2px solid;
     right: -30px;
     border-radius: 0 3px 3px 0;
-    height: 35.3px;
+    height: 34px;
+    vertical-align: top;
 
 }
 button:hover{
@@ -208,12 +210,15 @@ footer{
     font-size: 14px;
     margin: 0;
 }
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    color: orange;
+
+.search-btn {
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
+    color: brown;
+}
+.footer-link {
+    color: orange;
+    padding: 20px;
+    text-decoration: none;
 }

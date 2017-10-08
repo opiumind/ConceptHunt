@@ -29,7 +29,7 @@
 <div class="search">
     <div class="search-input-container">
         <input placeholder="Describe your idea" type="search" class="search-input"/>
-        <button><i class="fa-search"></i></button>
+        <button><i class="fa fa-search search-btn"></i></button>
     </div>
 </div>
 <div class="filter">
@@ -66,29 +66,16 @@
 </div>
 <footer>
     <p class="footer-links">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-instagram"></a>
-        <a href="#" class="fa fa-snapchat"></a>
-        <a href="#" class="fa fa-skype"></a>
+        <a href="#" class="fa fa-facebook footer-link"></a>
+        <a href="#" class="fa fa-twitter footer-link"></a>
+        <a href="#" class="fa fa-instagram footer-link"></a>
+        <a href="#" class="fa fa-snapchat footer-link"></a>
+        <a href="#" class="fa fa-skype footer-link"></a>
     </p>
     <p class="footer-company-name">&#9400; 2017 ConceptHunt, inc.</p>
 
 
 </footer>
 </body>
-<script>
-  function hndlr(response) {
-    for (var i = 0; i < response.items.length; i++) {
-      var item = response.items[i];
-      // in production code, item.htmlTitle should have the HTML entities escaped.
-      document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
-    }
-  }
-</script>
-<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyASvGxuB-zDfbnLFWDgIQQiNcHbo07w6Qs&cx=017543033878870048217:rmyrrsiadtw&q=free+parking&callback=hndlr">
-</script>
-<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyASvGxuB-zDfbnLFWDgIQQiNcHbo07w6Qs&cx=017543033878870048217:odnl6t9lnmy&q=free+parking&callback=hndlr2">
-</script>
 
 </html>
