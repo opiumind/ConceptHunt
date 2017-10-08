@@ -4,7 +4,7 @@ function search() {
 }
 
 function androidSearch() {
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:rmyrrsiadtw&q=free+parking" )
+  $.ajax( " https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:odnl6t9lnmy&q=free+parking" )
     .done(function(response) {
       console.log(333, response.items);
       makeList(response.items, "_android-result");
@@ -15,6 +15,7 @@ function androidSearch() {
     .always(function() {
       console.log( "android search is complete" );
     });
+
 }
 // function androidHndlr(response) {
 //   for (var i = 0; i < response.items.length; i++) {
@@ -25,7 +26,7 @@ function androidSearch() {
 // }
 
 function iosSearch() {
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:odnl6t9lnmy&q=free+parking" )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:rmyrrsiadtw&q=free+parking" )
     .done(function(response) {
       makeList(response.items, "_ios-result");
     })
