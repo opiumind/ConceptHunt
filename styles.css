@@ -142,6 +142,7 @@ p{
     border-top: #000000 1px solid ;
     overflow: hidden;
     position: relative;
+    display: flex;
 
 }
 .result-column{
