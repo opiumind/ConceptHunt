@@ -33,7 +33,8 @@ function androidSearch(description) {
     }
   }
   console.log("phra: ", searchPhrase);
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
+
     .done(function(response) {
       console.log(333, response.items);
       makeList(response.items, "_android-result");
@@ -44,10 +45,11 @@ function androidSearch(description) {
     .always(function() {
       console.log( "android search is complete" );
     });
+
 }
 
 function iosSearch(description) {
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
     .done(function(response) {
       makeList(response.items, "_ios-result");
     })
