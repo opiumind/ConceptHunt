@@ -4,10 +4,13 @@ $( document ).ready(function() {
   $('._search-input').blur(function() {
     var description = $('._search-input').val();
     $('._result').css('opacity', '0');
+    $('._congratulation').css('opacity', '0');
     isIdeaUnique = true;
     search($.trim(description));
     if (!isIdeaUnique) {
       $('._result').css('opacity', '1');
+    } else {
+      $('._congratulation').css('opacity', '1');
     }
   }).keypress(function (e) {
     var key = e.which;
