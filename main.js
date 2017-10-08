@@ -1,10 +1,39 @@
-function search() {
-  androidSearch();
-  iosSearch();
+$( document ).ready(function() {
+  $('._search-input').blur(function() {
+    var description = $('._search-input').val();
+    console.log(22,description);
+    search($.trim(description));
+  }).keypress(function (e) {
+    var key = e.which;
+    if(key == 13)
+    {
+      this.blur();
+      return false;
+    }
+  });
+
+  $(._search-btn).click(function() {
+    $('._search-input').blur();
+  })
+});
+
+function search(description) {
+  androidSearch(description);
+  iosSearch(description);
 }
 
-function androidSearch() {
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:rmyrrsiadtw&q=free+parking" )
+function androidSearch(description) {
+  var searchWords = description.split(/[^a-zA-Z0-9]+/);
+  console.log("words ", searchWords);
+  var searchPhrase = '';
+  for(let i = 0; i < searchWords.length; i++) {
+    searchPhrase += searchWords[i];
+    if (i != searchWords.length-1) {
+      searchPhrase += '+';
+    }
+  }
+  console.log("phra: ", searchPhrase);
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:rmyrrsiadtw&q=" + description )
     .done(function(response) {
       console.log(333, response.items);
       makeList(response.items, "_android-result");
@@ -16,16 +45,9 @@ function androidSearch() {
       console.log( "android search is complete" );
     });
 }
-// function androidHndlr(response) {
-//   for (var i = 0; i < response.items.length; i++) {
-//     var item = response.items[i];
-//     // in production code, item.htmlTitle should have the HTML entities escaped.
-//     document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
-//   }
-// }
 
-function iosSearch() {
-  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:odnl6t9lnmy&q=free+parking" )
+function iosSearch(description) {
+  $.ajax( "https://www.googleapis.com/customsearch/v1?key=AIzaSyCbrYKy4s2UmPuhmIsDOq2soKFNpuNhW1Y&cx=017543033878870048217:odnl6t9lnmy&q=" + description )
     .done(function(response) {
       makeList(response.items, "_ios-result");
     })
@@ -36,15 +58,6 @@ function iosSearch() {
       console.log( "ios search is complete" );
     });
 }
-
-// function iosHndlr(response) {
-//   for (var i = 0; i < response.items.length; i++) {
-//     var item = response.items[i];
-//     // in production code, item.htmlTitle should have the HTML entities escaped.
-//     console.log("!",response);
-//     document.getElementById("content2").innerHTML += "<br>" + item.htmlTitle;
-//   }
-// }
 
 function makeList(dataArray, elementClass) {
   console.log(dataArray);
@@ -59,5 +72,3 @@ function makeList(dataArray, elementClass) {
     $('.' + elementClass).html(resultString);
   }
 }
-
-search();

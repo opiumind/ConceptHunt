@@ -19,8 +19,8 @@
 </header>
 <div class="search">
     <div class="search-input-container">
-        <input placeholder="Describe your idea" type="search" class="search-input"/>
-        <button><i class="fa fa-search"></i></button>
+        <input placeholder="Describe your idea" type="search" class="search-input _search-input"/>
+        <button><i class="fa fa-search _search-btn"></i></button>
     </div>
 </div>
 <div class="filter">
@@ -57,18 +57,5 @@
 </div>
 <footer></footer>
 </body>
-<script>
-  function hndlr(response) {
-    for (var i = 0; i < response.items.length; i++) {
-      var item = response.items[i];
-      // in production code, item.htmlTitle should have the HTML entities escaped.
-      document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
-    }
-  }
-</script>
-<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyASvGxuB-zDfbnLFWDgIQQiNcHbo07w6Qs&cx=017543033878870048217:rmyrrsiadtw&q=free+parking&callback=hndlr">
-</script>
-<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyASvGxuB-zDfbnLFWDgIQQiNcHbo07w6Qs&cx=017543033878870048217:odnl6t9lnmy&q=free+parking&callback=hndlr2">
-</script>
 
 </html>
