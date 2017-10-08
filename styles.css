@@ -1,6 +1,7 @@
 body{
     margin: 0;
     background-color: #ffc453;
+    font-family: Arial, sans-serif;
 }
 
 .top{
@@ -12,18 +13,18 @@ body{
 .title{
     color: brown;
     display: inline-block;
-    margin-right: 70px;
+    margin-right: 90px;
     margin-left: calc(50% - 122px);
 
 }
 .sign-up-button{
-    margin-top: 26px;
+    margin-top: 24px;
     text-decoration: none;
     background-color: brown;
     color: orange;
     right: 0;
     position: absolute;
-    width: 70px;
+    width: 90px;
     margin-right: 40px;
     font-size: 20px;
     padding: 5px 10px 5px 10px;
@@ -40,11 +41,13 @@ body{
     font-size: 0;
 }
 .search-input{
-    text-align: center;
-    margin-top: 50px;
-    width: 80%;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 53px;
+    width: 96%;
     border-radius: 3px 0 0 3px;
     border: orange 2px solid;
+    padding: 5px;
 
 }
 
@@ -52,11 +55,14 @@ body{
     color: brown;
 }
 button{
+    margin-bottom: 22px;
+    width: 4%;
     background-color: orange;
     border: orange 2px solid;
     right: -30px;
     border-radius: 0 3px 3px 0;
-    height: 21px;
+    height: 35.3px;
+
 }
 button:hover{
     cursor: pointer;
@@ -66,6 +72,7 @@ p{
 }
 .filter{
     align-content: center;
+    margin-bottom: 30px;
 }
 .check-box{
     display: inline-block;
@@ -74,7 +81,7 @@ p{
 
 .result{
     border: 1px #000000 solid;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
 }
 .result-headers-container{
@@ -89,6 +96,7 @@ p{
     border-right: #000000 1px solid;
     display: inline-block;
     text-align: center;
+    padding: 6px;
 }
 .result-header:last-child {
     border-right: 0;
@@ -110,6 +118,7 @@ p{
     width: calc(100%/3);
     border-right: #000000 1px solid;
     text-align: center;
+    padding: 6px;
 }
 .result-column:last-child{
     border-right: 0;
